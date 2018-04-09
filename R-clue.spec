@@ -4,7 +4,7 @@
 #
 Name     : R-clue
 Version  : 0.3.54
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/clue_0.3-54.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/clue_0.3-54.tar.gz
 Summary  : Cluster Ensembles
@@ -12,13 +12,17 @@ Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-clue-lib
 Requires: R-ape
+Requires: R-cclust
 Requires: R-e1071
 Requires: R-fpc
+Requires: R-lpSolve
 Requires: R-mlbench
 Requires: R-quadprog
 BuildRequires : R-ape
+BuildRequires : R-cclust
 BuildRequires : R-e1071
 BuildRequires : R-fpc
+BuildRequires : R-lpSolve
 BuildRequires : R-mlbench
 BuildRequires : R-quadprog
 BuildRequires : clr-R-helpers
@@ -42,11 +46,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521212615
+export SOURCE_DATE_EPOCH=1523294693
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521212615
+export SOURCE_DATE_EPOCH=1523294693
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
