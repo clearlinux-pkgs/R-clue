@@ -4,23 +4,18 @@
 #
 Name     : R-clue
 Version  : 0.3.57
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/clue_0.3-57.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/clue_0.3-57.tar.gz
 Summary  : Cluster Ensembles
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-clue-lib = %{version}-%{release}
-Requires: R-ape
-Requires: R-cclust
-Requires: R-e1071
-Requires: R-fpc
-Requires: R-mlbench
-Requires: R-quadprog
 BuildRequires : R-ape
 BuildRequires : R-cclust
 BuildRequires : R-e1071
 BuildRequires : R-fpc
+BuildRequires : R-lpSolve
 BuildRequires : R-mlbench
 BuildRequires : R-quadprog
 BuildRequires : buildreq-R
@@ -44,10 +39,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551129014
+export SOURCE_DATE_EPOCH=1552727922
 
 %install
-export SOURCE_DATE_EPOCH=1551129014
+export SOURCE_DATE_EPOCH=1552727922
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -83,8 +78,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library clue|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  clue || :
 
 
 %files
@@ -122,7 +116,6 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/clue/help/paths.rds
 /usr/lib64/R/library/clue/html/00Index.html
 /usr/lib64/R/library/clue/html/R.css
-/usr/lib64/R/library/clue/libs/symbols.rds
 /usr/lib64/R/library/clue/po/en@quot/LC_MESSAGES/R-clue.mo
 
 %files lib
