@@ -4,7 +4,7 @@
 #
 Name     : R-clue
 Version  : 0.3.57
-Release  : 27
+Release  : 28
 URL      : https://cran.r-project.org/src/contrib/clue_0.3-57.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/clue_0.3-57.tar.gz
 Summary  : Cluster Ensembles
