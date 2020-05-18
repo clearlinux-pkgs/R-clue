@@ -4,22 +4,16 @@
 #
 Name     : R-clue
 Version  : 0.3.57
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/clue_0.3-57.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/clue_0.3-57.tar.gz
 Summary  : Cluster Ensembles
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-clue-lib = %{version}-%{release}
-BuildRequires : R-ape
-BuildRequires : R-cclust
-BuildRequires : R-e1071
-BuildRequires : R-fpc
-BuildRequires : R-lpSolve
-BuildRequires : R-mlbench
+Requires: R-quadprog
 BuildRequires : R-quadprog
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 No detailed description available
@@ -34,21 +28,22 @@ lib components for the R-clue package.
 
 %prep
 %setup -q -c -n clue
+cd %{_builddir}/clue
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571810619
+export SOURCE_DATE_EPOCH=1589787008
 
 %install
-export SOURCE_DATE_EPOCH=1571810619
+export SOURCE_DATE_EPOCH=1589787008
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
