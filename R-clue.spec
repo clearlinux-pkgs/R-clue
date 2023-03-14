@@ -4,7 +4,7 @@
 #
 Name     : R-clue
 Version  : 0.3.64
-Release  : 55
+Release  : 56
 URL      : https://cran.r-project.org/src/contrib/clue_0.3-64.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/clue_0.3-64.tar.gz
 Summary  : Cluster Ensembles
@@ -13,9 +13,6 @@ License  : GPL-2.0
 Requires: R-clue-lib = %{version}-%{release}
 BuildRequires : R-quadprog
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 No detailed description available
@@ -37,10 +34,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1675209513
+export SOURCE_DATE_EPOCH=1678812177
 
 %install
-export SOURCE_DATE_EPOCH=1675209513
+export SOURCE_DATE_EPOCH=1678812177
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
